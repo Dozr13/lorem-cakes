@@ -22,10 +22,12 @@ export default class Checkout extends Component {
   //   }
   // }
 
+  sum = () => {
+    
+  }
 
 
-
-  order() {
+  order = () => {
     axios.post(`/api/orderCakes`, this.state.price)
     .then( res => {
       this.setState({
@@ -36,12 +38,20 @@ export default class Checkout extends Component {
     })
   }
 
+  clearCart = () => {
+    
+  }
+
 
 
   render() {
 
     let chosenCakes = this.props.cart.map((cakes, i) =>
-    <li key={ i }>{ cakes }</li>)
+    <div className="cart-cake" key={ i }>
+      <img src={`${ process.env.PUBLIC_URL }${ cakes.imgUrl }`} alt="cake" />
+      { cakes.name } <br/>
+      { cakes.price }
+    </div>)
 
     return (
 
@@ -54,7 +64,8 @@ export default class Checkout extends Component {
           { this.price }
         </div>
 
-        <button className="checkout-btn" onClick={ this.order() }>Checkout</button>
+          <button className="checkout-btn" onClick={ this.order() }>Checkout</button>
+
 
       </div>
 

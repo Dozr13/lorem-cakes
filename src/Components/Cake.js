@@ -25,7 +25,14 @@ import React from 'react'
         {/* <Image source={ require(`../imgs/IMG_0472.jpg`) } /> */}
         <h2>{ props.cake.name }</h2>
         <h3>{ props.cake.flavor }</h3>
-        <button className="add-btn-style" onClick={ e => this.props.add( props.cake.name ) }>Add to Cart</button>
+        <h3>{ props.cake.price }</h3>
+
+
+
+        <button className="add-btn-style" onClick={ e => props.addToCart( props.cake ) }>Add to Cart</button>
+
+
+
       </div>
     )
   }

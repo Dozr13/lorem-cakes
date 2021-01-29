@@ -16,19 +16,13 @@ export default class DisplayCakes extends Component {
 
   render() {
 
-
   // export default function DisplayCakes(props) {
 
-
-    let mappedCakes = () => this.props.cakes.map(( c, i ) => <Cake cake={ c } key={ i } add={ this.props.addToCart }/>) 
-    
-    
+    let mappedCakes = () => this.props.cakes.map(( c, i ) => <Cake cake={ c } key={ i } addToCart={ this.props.addToCart }/>) 
     
     // let mappedCakes = () => { 
     //   return this.props.cakes.map(( c, i ) => <Cake cake={ c } key={ i } /> )
     // }
-
-
 
     // console.log({props})
     return (

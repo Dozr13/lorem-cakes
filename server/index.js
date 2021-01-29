@@ -1,5 +1,5 @@
 const express = require('express');
-const cc = require('./controllers/cake_controller');
+const cc = require('./controllers/cake_controller.js');
 
 const app = express()
 
@@ -7,10 +7,10 @@ app.use(express.json())
 
 
 const cakeBaseUrl = "/api/cakes"
-app.get(cakeBaseUrl, cc.read)
-app.post(cakeBaseUrl, cc.create)
-app.put(`${cakeBaseUrl}`, cc.update)
-app.delete(`${cakeBaseUrl}`, cc.delete)
+app.get(cakeBaseUrl, cc.getCakes)
+app.post(cakeBaseUrl, cc.addCake)
+app.put(`${cakeBaseUrl}/:id`, cc.updateCake)
+app.delete(`${cakeBaseUrl}/:id`, cc.deleteCake)
 
 
 

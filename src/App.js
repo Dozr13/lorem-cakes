@@ -23,7 +23,7 @@ export default class App extends Component {
     .then(res => {
       // console.log({res})
       this.setState({
-      cakes: res.data.cakes
+      cakes: res.data
     }) 
     // console.log(this.state)
   }).catch( err => console.log( err ))

@@ -9,7 +9,7 @@ export default function Header() {
     <header className="header"> {/* flex-direction: column */}
       <div className="left">
         <img className="logo"
-        src="https://bellejoucakery.com/wp-content/uploads/2016/04/333-1-1024x466.jpg" 
+        src="https://img.pngio.com/cupcake-illustration-ice-cream-cake-logo-ice-cream-transparent-cake-logo-png-800_800.png" 
         alt="mock logo of a cake" />
       </div>
       
@@ -19,7 +19,7 @@ export default function Header() {
       </div>
 
       <div className="right">
-      {/* <h2 className="motto"><a href="#">Eat more cake!</a></h2> */}
+      <h2 className="motto"><a href="#">Eat more cake!</a></h2>
       </div>
 
     </header>
