@@ -35,7 +35,11 @@ export default class DisplayCakes extends Component {
 
   // ! maps displayedCakes to display each individual cakes in the array
 
-    let mappedCakes = () => displayedCakes.map(( c, i ) => <Cake cake={ c } key={ i } addToCart={ this.props.addToCart }/>) 
+    let mappedCakes = () => displayedCakes.map(( c, i ) => <Cake cake={ c } key={ i } addToCart={ this.props.addToCart } buttons={ [
+      { class:"add-btn-style", name: 'Add To Cart', cb: () => this.props.addToCart( c ), disable: false }
+    ] } 
+    />
+    ) 
     
 
     return (
@@ -45,7 +49,7 @@ export default class DisplayCakes extends Component {
       <div className="left">
 
     {/* may need to remove */}
-        <div className="seperate">
+        <div className="cake-btn-divide">
 
           <div className="bakery">
             { mappedCakes() } 
@@ -57,14 +61,18 @@ export default class DisplayCakes extends Component {
 
             <div className="prev-next">
 
+              <h5 className="text-wrap">Check out more cakes!</h5>
+
               <button disabled={ this.state.currentPage === 1 } onClick={ () => { this.setState({ currentPage: this.state.currentPage - 1 })}}>Previous Page</button>
 
-              <button disabled={ this.state.currentPage === Math.ceil(this.props.cakes.length / this.state.display) } onClick={ () => { this.setState({ currentPage: this.state.currentPage + 1})}}>Next Page</button>
+              <button disabled={ this.state.currentPage === Math.ceil( this.props.cakes.length / this.state.display ) } onClick={ () => { this.setState({ currentPage: this.state.currentPage + 1 })}}>Next Page</button>
 
             </div>
 
 
             <div className="display-count">
+
+              <h5 className="text-wrap">Select display: Cakes per page</h5>
 
               <button disabled={ this.state.display === 1 } onClick={ () => { this.changeDisplay(1) } }>1</button>
               <button disabled={ this.state.display === 3 } onClick={ () => { this.changeDisplay(3) } }>3</button>

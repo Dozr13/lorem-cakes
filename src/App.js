@@ -36,6 +36,7 @@ export default class App extends Component {
 // ! axios.POST
 // * addToCart adds selected item to cart []
   addToCart = ( cake ) => {
+    console.log('add')
     axios.post( `/api/cakes`, { cake } )
     .then( res => {
       // console.log(res.data)

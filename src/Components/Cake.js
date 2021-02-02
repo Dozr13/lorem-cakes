@@ -1,4 +1,5 @@
 import React from 'react'
+import NumberFormat from 'react-number-format';
 // const img = require(`../imgs/dark-delicate-cake.jpg`)
 // import { images } from '../Utility'
 // import img from './IMG_0488.jpg'
@@ -16,8 +17,12 @@ import React from 'react'
 // img, title, price
 // console.log(props.cake)
 
+
   //! display current specified values of each object
   //! had to add process.env.PUBLIC_URL because could not figure out how to display img from data with React
+let price = props.cake.price * props.cake.quantity
+// console.log(props)
+let mappedButtons = props.buttons.map(( b, i ) => <button className={ b.class } disabled={ b.disable } key={ i } onClick={ b.cb }>{ b.name }</button>)
 
     return (
       <div className="cake">
@@ -29,11 +34,11 @@ import React from 'react'
         <h2>{ props.cake.name }</h2>
         <h3>{ props.cake.flavor }</h3>
         {/* <h3>{ props.cake.quantity }</h3> */}
-        <h4>{ Intl.NumberFormat( 'en-US', { style:'currency', currency:'USD', } ).format( props.cake.price ) }</h4>
+        <h4><NumberFormat value={ price } displayType={ 'text' } thousandSeparator={true} prefix={ '$' } isNumericString={ true } decimalScale={ 2 } fixedDecimalScale={ true } /></h4>
 
-
-
-        <button className="add-btn-style" onClick={ e => props.addToCart( props.cake ) }>Add to Cart</button>
+        
+        { mappedButtons }
+        {/* <button className="add-btn-style" onClick={ e => props.addToCart( props.cake ) }>Add to Cart</button> */}
 
 
 
