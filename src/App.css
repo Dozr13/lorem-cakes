@@ -2,171 +2,234 @@
 
 /* * Main main class from App.js */
 
+html, body{
+  min-height: 100%;
+}
+
 .App{
+  min-height: 100%;
+  width: 100vw;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  margin: 0;
+}
+
+.side-by-side{
+  min-height: 100%;
+  display: flex;
 }
 
 /* ! App.js end */
 /* * Styling and fitting for the header bar and contents from Header.js */
 
 
-.flex-container{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .header{
+  width: 100vw;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  flex: 1;
-  height: 8%;
+  height: 17vh;
   min-width: 100%;
-  background-color: rgb(164, 57, 173);
+  background-color:#506369;
 }
 
 /* * Left side of header */
 /*  */
-.left>*{
-  margin: 10px;
+
+.left-header{
+  width: 15%;
 }
 
 .logo{
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  background-color: rgb(164, 57, 173);
-  
+  height: 95%;
+  display: flex;
+  align-content: center;
+  margin-left: 1.5em;
 }
-
 
 
 /* * Middle of header */
 
-.mid{
-  text-align: center;
+.mid-header{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
 }
 
 .shop-name{
-  font-size: 40px;
+  display: flex;
+  font-size: 5em;
   font-family: 'Dancing Script', cursive;
-  /* display: inline-block; */
+  color: #cd2e82;
 }
 
 
 /* * Right side of header */
 
-.right{
-  text-align: right;
+.right-header{
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: .5em;
 }
 
 .motto{
+  height: 30%;
   display: flex;
-  margin: 10px;
   font-family: 'Dancing Script', cursive;
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 500;
+  margin-top: 0;
 }
 
-.right a{
+.motto a{
   text-decoration: none;
 }
 
-/* 
-.right a:hover{
-  font-size: 25px;
-  opacity: 0.5;
-} */
-
-
-
+.motto a:hover{
+  font-size: 58px;
+  color: #cd2e82;
+}
 
 /* ! End of Header.js */
 /* * Individual cake image sizing and image display from Cake.js */
 /* ! AS WELL AS THE WRAPPING WHICH FLOWS OVER TO DisplayCakes.js */
 
 .cake{
-  height: auto;
   width: 30%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 10vh;
 }
 
 .cake img{
-  height: 100px;
-  width: 100px;
+  height: 35vh;
+  width: 20vw;
   border-radius: 20%;
-  border: 2px solid;
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
+  border: 3px solid;
+
 }
 
 .cake img:hover{
-  transform: scale(3.0);
-  border: outset;
-  border-color: cornflowerblue;
+  border: 5px outset cornflowerblue;
 }
 
 .cake h2{
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 700; 
-  color: #187940;
-  margin: 10px;
+  color: #9bbecc;
+  margin: 5px;
 }
 
 .cake h3{
   font-size: 20px;
   font-weight: 400;
-  color: #7d53f0;
+  color: #afeeee;
   margin-top:0;
   margin-bottom: 0;
 }
 
+.cake h4{
+  font-size: 18px;
+  font-weight: 300;
+  color: #cec0f3;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+button{
+  background-color: #353f6b;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
 .add-btn-style{
-  display: flex;
+  background-color: transparent;
+  color: #000;
+  border: 4px solid #4CAF50;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
   margin-top: 10px;
-  margin-bottom: 32px;
+  margin-bottom: 1vh;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.add-btn-style:hover{
+  background-color: #4caf50;
+  color: #fff;
 }
 
 /* ! End of Cake.js */
 /* * Positioning and layout of DisplayCakes.js */
 
-.flex-cake-container{
-  width: 75%;
+.left{
+  width: 85%;
+  min-height: 83vh;
   display: flex;
-  flex-direction: row;
-  /* flex-flow: row wrap; */
-  background-color: #fcc688;
-  margin: 0;
+  flex-direction: column;
+  background-color: #7f948f;
 }
 
-.cake-show{
-  /* height: 100%; */
+.seperate{
+  width: 100%;
+  min-height: 100%;
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  /* margin: px; */
-  margin-top: 13px;
+  flex-direction: column;
 }
 
-.side-by-side{
+.bakery{
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
+
+.buttons{
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  justify-self: flex-end;
+  align-items: center;
+  margin: 5px;
+}
+
+.prev-next{
+  display: flex;
+  position: relative;
+  bottom: 0px;
+}
+
+.display-count{
+  display: flex;
+  position: relative;
+  bottom: 0px;
+  right: .8vw;
+}
+
+
 
 /* ! End of DisplayCakes.js */
 /* * Positioning and layout of Checkout.js */
 
-.flex-cart-container{
-  width: 25%;
+.right{
+  min-height: 100%;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -175,18 +238,36 @@
 }
 
 .cart{
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  /* align-self: center; */
+  text-align: center;
+  /* align-content: center; */
 }
+
+.cart img{
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+}
+
+.cart p{
+  text-align: center;
+}
+
+/* .center-cart{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+} */
 
 .cart-cake img{
   height: 100px;
   width: 100px;
   display: flex;
   justify-content: center;
+  align-self: center;
   border-radius: 20%;
 }
 
@@ -196,8 +277,8 @@
   justify-content: center;
   font-size: 20px;
   padding: 5px;
-  background-color: #ebee45;
-  
+  background-color: #fec601;
+  cursor: pointer;
 }
 
 

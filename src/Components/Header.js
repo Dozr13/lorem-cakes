@@ -4,25 +4,25 @@ export default function Header() {
 
   return (
 
-  <div className="flex-container">
-
     <header className="header"> {/* flex-direction: column */}
-      <div className="left">
+      <div className="left-header">
         <img className="logo"
-        src="https://img.pngio.com/cupcake-illustration-ice-cream-cake-logo-ice-cream-transparent-cake-logo-png-800_800.png" 
+        src={process.env.PUBLIC_URL + '/imgs/loremCakeLogo.png'}
         alt="mock logo of a cake" />
       </div>
       
-      <div className="mid">
+      <div className="mid-header">
         <h1 className="shop-name">Lorem Ipsum Cake Shop</h1>
         <nav className="nav"></nav>
       </div>
 
-      <div className="right">
-      <h2 className="motto"><a href="#">Eat more cake!</a></h2>
+      <div className="right-header">
+      <h2 className="motto"><a href="/#">Eat more cake!</a></h2>
       </div>
 
     </header>
-  </div>  
+
   )
 }
+
+

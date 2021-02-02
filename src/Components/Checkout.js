@@ -1,74 +1,52 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-
-
-export default class Checkout extends Component {
-  constructor(props) {
-    super(props)
-    
-    this.state = {
-      price: 0
-    }
-  }
-
-  // componentDidMount = (previousProps) => {
-  //   if( previousProps.cart !== this.props.cart ) {
-
-  //     let sum = this.props.cart.reduce(( total, c ) => total += c.price, 0 )
-      
-  //     this.setState({
-  //       price: sum
-  //     })
-  //   }
-  // }
-
-  sum = () => {
-    
-  }
-
-
-  order = () => {
-    axios.post(`/api/orderCakes`, this.state.price)
-    .then( res => {
-      this.setState({
-        price: 0
-      })
-    }).catch( err => {
-      console.log( err )
-    })
-  }
-
-  clearCart = () => {
-    
-  }
+import React from 'react'
 
 
 
-  render() {
+export default function Checkout(props){
 
-    let chosenCakes = this.props.cart.map((cakes, i) =>
+  //! creates total sum of all cakes in checkout
+  console.log(props.cart)
+    let sum = props.cart.reduce((total, cake) => total += cake.price * cake.quantity, 0)
+  
+  //! map through cart array after it has been given an object to map through, and displaying values specified
+  //! formatted price * quantity to be in USD
+  //! added 3 buttons to adjust quantity of item in cart and also on eot remove item from cart
+
+    let chosenCakes = props.cart.map((cakes, i) =>
     <div className="cart-cake" key={ i }>
       <img src={`${ process.env.PUBLIC_URL }${ cakes.imgUrl }`} alt="cake" />
       { cakes.name } <br/>
-      { cakes.price }
+      { Intl.NumberFormat( 'en-US', { style:'currency', currency:'USD', } ).format( cakes.price * cakes.quantity ) } <br/>
+     {/* { console.log(cakes)} */}
+      { cakes.quantity }
+
+
+
+        <button disabled={ cakes.quantity <= 1 } onClick={ () => { props.updateCart( cakes.id, cakes.quantity - 1 )}}>-</button>
+
+        <button onClick={ () => { props.delete( cakes.id ) } }>Remove</button>
+
+        <button onClick={ () => { props.updateCart( cakes.id, cakes.quantity + 1 )} }>+</button>
+
+
+
     </div>)
 
-    return (
+return (
 
-      <div className="flex-cart-container">
+      <div className="right">
       
         <h2>Your Cart!</h2>
 
         <div className="cart">
-          { chosenCakes.length === 0 ? <p>Click on cake images to add the cake to your cart!</p> : <ol>{ chosenCakes }</ol> }
-          { this.price }
+          { chosenCakes.length === 0 ? <p className="center-cart">Click on cake images to add the cake to your cart!</p> : <ol>{ chosenCakes }</ol> }
+          { Intl.NumberFormat( 'en-US', { style:'currency', currency:'USD', } ).format(sum) }
         </div>
 
-          <button className="checkout-btn" onClick={ this.order() }>Checkout</button>
+          { props.cart.length > 0 && <button className="checkout-btn" onClick={ props.order }>Checkout</button> }
 
 
       </div>
 
     )
-  }
 }

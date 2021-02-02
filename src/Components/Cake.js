@@ -16,6 +16,9 @@ import React from 'react'
 // img, title, price
 // console.log(props.cake)
 
+  //! display current specified values of each object
+  //! had to add process.env.PUBLIC_URL because could not figure out how to display img from data with React
+
     return (
       <div className="cake">
         <img src={`${process.env.PUBLIC_URL}${props.cake.imgUrl}`} alt="cake" />
@@ -25,7 +28,8 @@ import React from 'react'
         {/* <Image source={ require(`../imgs/IMG_0472.jpg`) } /> */}
         <h2>{ props.cake.name }</h2>
         <h3>{ props.cake.flavor }</h3>
-        <h3>{ props.cake.price }</h3>
+        {/* <h3>{ props.cake.quantity }</h3> */}
+        <h4>{ Intl.NumberFormat( 'en-US', { style:'currency', currency:'USD', } ).format( props.cake.price ) }</h4>
 
 
 
