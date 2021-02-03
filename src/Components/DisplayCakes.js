@@ -43,7 +43,7 @@ export default class DisplayCakes extends Component {
     
 
     return (
-      <div className="left">
+      <main className="left">
 
         <div className="cake-btn-divide">
 
@@ -69,7 +69,7 @@ export default class DisplayCakes extends Component {
             </section>       
           </section>
         </div>
-      </div>
+      </main>
     )
   }
 //   }

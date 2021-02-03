@@ -31,7 +31,7 @@ body{
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  height: 17vh;
+  height: 18vh;
   min-width: 100%;
   /* background-color:#506369; */
   background-color: #7f948f;
@@ -45,14 +45,14 @@ body{
 }
 
 .logo-bg{
+  height: 17vh;
   width: 9vw;
   background-color: #fae1dd;
   opacity: 95%;
   border-radius: 50%;
-  height: 100%;
   display: flex;
   align-content: center;
-  margin-left: .3em;
+  margin: .3em;
 }
 
 .logo{
@@ -143,14 +143,14 @@ body{
 .cake h2{
   font-size: 30px;
   font-weight: 700; 
-  color: #9bbecc;
+  color: #7cb3b3;
   margin: 5px;
 }
 
 .cake h3{
   font-size: 20px;
   font-weight: 400;
-  color: #afeeee;
+  color: #ca80c4;
   margin-top:0;
   margin-bottom: 0;
 }
@@ -158,7 +158,7 @@ body{
 .cake h4{
   font-size: 18px;
   font-weight: 300;
-  color: #cec0f3;
+  color: #887caa;
   margin-top: 0;
   margin-bottom: 0;
 }

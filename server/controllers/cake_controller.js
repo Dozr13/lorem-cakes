@@ -1,5 +1,5 @@
 let { cakes } = require('../data.js')
-let id = 10
+// let id = 10
 
 let cart = []
 let orders = []
