@@ -5,12 +5,16 @@
 
 /* * Main main class from App.js */
 
+body{
+  overflow-x: hidden;
+}
+
 .App{
   min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
 }
 
 .side-by-side{
@@ -43,7 +47,7 @@
   height: 95%;
   display: flex;
   align-content: center;
-  margin-left: 1.5em;
+  margin-left: 1em;
 }
 
 
@@ -78,11 +82,12 @@
 
 .motto{
   height: 30%;
-  display: flex;
+  display: inline-block;
   font-family: 'Dancing Script', cursive;
   font-size: 38px;
   font-weight: 500;
-  margin-top: 0;
+  margin-top: 0px;
+  margin-right: 20px;
 }
 
 .motto a{
@@ -209,7 +214,7 @@ button{
   margin: 5px;
 }
 
-.prev-next{
+.btn-left{
   width: 20%;
   display: flex;
   flex-wrap: wrap;
@@ -217,7 +222,7 @@ button{
   bottom: 0px;
 }
 
-.display-count{
+.btn-right{
   width: 18%;
   display: flex;
   flex-wrap: wrap;
@@ -242,34 +247,40 @@ button{
   width: 20vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   background-color: #afeeee;
 }
 
 .cart{
-  display: flex;
-  flex-wrap: wrap;
-  /* align-self: center; */
-  text-align: center;
-  /* align-content: center; */
-}
-
-.cart img{
-  display: flex;
-  justify-self: center;
-  align-items: center;
-  align-content: center;
-}
-
-.cart p{
-  text-align: center;
-}
-
-.center-cart{
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  display: flex;
+}
+
+.cart ol{
+  width: 100%;
+  padding: 0;
+}
+
+.cart span{
+  font-size: 20px;
+  margin: 0px;
+}
+
+.cart-quantity{
+  float: right;
+}
+
+.cart-cake{
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
 }
 
 .cart-cake img{
@@ -278,6 +289,19 @@ button{
   display: flex;
   align-content: center;
   border-radius: 20%;
+}
+
+.cart-cake h2{
+  font-size: 22px;
+  color: #fec601;
+  margin-top: 1px;
+  margin-bottom: 0;
+}
+
+.cart-cake h3{
+  font-size: 18px;
+  color: #0f0;
+  margin-top: 0;
 }
 
 #total{

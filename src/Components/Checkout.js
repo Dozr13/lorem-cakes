@@ -14,22 +14,18 @@ export default function Checkout(props){
   //! formatted price * quantity to be in USD
   //! added 3 buttons to adjust quantity of item in cart and also on eot remove item from cart
 
-    let chosenCakes = props.cart.map((cakes, i) => <div className="cart-cake" key={ i }>
+    let chosenCakes = props.cart.map((cakes, i) => <div key={ i }>
+      <span class="cart-quantity">
+      { cakes.quantity }
+      </span>
 
-      <Cake cake={ cakes } buttons={ [
-      { name: '-', cb: () => props.updateCart( cakes.id, cakes.quantity - 1 ), disable: cakes.quantity <= 1 }, 
-      { name: 'Remove', cb: () => props.delete( cakes.id ), disable: false },
-      { name: '+', cb: () => props.updateCart( cakes.id, cakes.quantity + 1 ), disable: false }
+      <Cake class="cart-cake" cake={ cakes } buttons={ [
+      { class:"cart-btns", name: '-', cb: () => props.updateCart( cakes.id, cakes.quantity - 1 ), disable: cakes.quantity <= 1 }, 
+      { class:"cart-btns", name: 'Remove', cb: () => props.delete( cakes.id ), disable: false },
+      { class:"cart-btns", name: '+', cb: () => props.updateCart( cakes.id, cakes.quantity + 1 ), disable: false }
       ] }
       />
-      
-      { cakes.quantity }
 
-        {/* <button disabled={ cakes.quantity <= 1 } onClick={ () => { props.updateCart( cakes.id, cakes.quantity - 1 )}}>-</button>
-
-        <button onClick={ () => { props.delete( cakes.id ) } }>Remove</button>
-
-        <button onClick={ () => { props.updateCart( cakes.id, cakes.quantity + 1 )} }>+</button> */}
 
         </div>
     )
@@ -37,21 +33,18 @@ export default function Checkout(props){
 return (
 
       <div className="right">
-      
+{/* Cart Title */}
         <h2>Your Cart!</h2>
-
-        <div className="cart">
-          { chosenCakes.length === 0 ? <p className="center-cart">Click on cake images to add the cake to your cart!</p> : <ol>{ chosenCakes }</ol> }
+{/* Cart Contents */}
+        <section className="cart">
+          { chosenCakes.length === 0 ? <p>Click on the Add button to add cakes to your cart!</p> : <ol>{ chosenCakes }</ol> }
           
-        </div>
-{/* can also use Intl.NumberFormat */}
-          {/* { Intl.NumberFormat( 'en-US', { style:'currency', currency:'USD', } ).format(sum) } */}
-
-          <div id="total">
-          { chosenCakes.length === 0 ? null : <NumberFormat value={ sum } displayType={ 'text' } thousandSeparator={true} prefix={ 'Total: $' } isNumericString={ true } decimalScale={ 2 } fixedDecimalScale={ true } />
-          }
-          </div>
-
+        </section>
+{/* Total purchase Information */}
+          <span id="total">
+          { chosenCakes.length === 0 ? null : <NumberFormat value={ sum } displayType={ 'text' } thousandSeparator={true} prefix={ 'Total: $' } isNumericString={ true } decimalScale={ 2 } fixedDecimalScale={ true } /> }
+          </span>
+{/* Checkout Button */}
           { props.cart.length > 0 && <button className="checkout-btn" onClick={ props.order }>Checkout</button> }
 
       </div>

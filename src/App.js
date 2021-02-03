@@ -109,30 +109,27 @@ export default class App extends Component {
     // console.log(this.state.cakes)
 
     return (
+// Whole Page div
       <div className="App">
-
-    <ToastContainer
-    position="top-right"
-    autoClose={5000}
-    hideProgressBar={false}
-    newestOnTop={false}
-    closeOnClick
-    rtl={false}
-    pauseOnFocusLoss
-    draggable
-    pauseOnHover
-    />
-
+{/* Toast Settings */}
+        <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
 
         <Header />
-
-      <div className="side-by-side">
-
-        <DisplayCakes cakes={ this.state.cakes } addToCart={ this.addToCart } />
-
+{/* Separates main sections */}
+        <div className="side-by-side">
+          <DisplayCakes cakes={ this.state.cakes } addToCart={ this.addToCart } />
           <Checkout cart={ this.state.cart } empty={ this.clearCart } order={ this.order } updateCart={ this.updateCart } delete={ this.delete } />
-
-      </div>
+        </div>
 
       </div>
     )

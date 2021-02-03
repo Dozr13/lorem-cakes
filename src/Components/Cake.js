@@ -25,23 +25,14 @@ let price = props.cake.price * props.cake.quantity
 let mappedButtons = props.buttons.map(( b, i ) => <button className={ b.class } disabled={ b.disable } key={ i } onClick={ b.cb }>{ b.name }</button>)
 
     return (
-      <div className="cake">
+      <div className={ props.class }>
         <img src={`${process.env.PUBLIC_URL}${props.cake.imgUrl}`} alt="cake" />
-          {/* <img src={ images[0] } alt="cake" /> */}
-        {/* <img src={image} /> */}
-        {/* <img src={ img } alt={ props.cake.name } /> */}
-        {/* <Image source={ require(`../imgs/IMG_0472.jpg`) } /> */}
         <h2>{ props.cake.name }</h2>
         <h3>{ props.cake.flavor }</h3>
-        {/* <h3>{ props.cake.quantity }</h3> */}
         <h4><NumberFormat value={ price } displayType={ 'text' } thousandSeparator={true} prefix={ '$' } isNumericString={ true } decimalScale={ 2 } fixedDecimalScale={ true } /></h4>
-
         
         { mappedButtons }
-        {/* <button className="add-btn-style" onClick={ e => props.addToCart( props.cake ) }>Add to Cart</button> */}
-
-
-
+        
       </div>
     )
   }

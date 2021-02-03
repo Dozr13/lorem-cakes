@@ -35,7 +35,7 @@ export default class DisplayCakes extends Component {
 
   // ! maps displayedCakes to display each individual cakes in the array
 
-    let mappedCakes = () => displayedCakes.map(( c, i ) => <Cake cake={ c } key={ i } addToCart={ this.props.addToCart } buttons={ [
+    let mappedCakes = () => displayedCakes.map(( c, i ) => <Cake class="cake" cake={ c } key={ i } addToCart={ this.props.addToCart } buttons={ [
       { class:"add-btn-style", name: 'Add To Cart', cb: () => this.props.addToCart( c ), disable: false }
     ] } 
     />
@@ -43,53 +43,31 @@ export default class DisplayCakes extends Component {
     
 
     return (
-          
-      
-      
       <div className="left">
 
-    {/* may need to remove */}
         <div className="cake-btn-divide">
 
-          <div className="bakery">
+          <section className="bakery">
             { mappedCakes() } 
-          </div>
-
+          </section>
 {/* buttons to provide user with altering page items displayed */}
-
-          <div className="buttons">
-
-            <div className="prev-next">
-
+          <section className="buttons">
+{/* Previous / Next button Section */}
+            <section className="btn-left">
               <h5 className="text-wrap">Check out more cakes!</h5>
-
               <button disabled={ this.state.currentPage === 1 } onClick={ () => { this.setState({ currentPage: this.state.currentPage - 1 })}}>Previous Page</button>
-
               <button disabled={ this.state.currentPage === Math.ceil( this.props.cakes.length / this.state.display ) } onClick={ () => { this.setState({ currentPage: this.state.currentPage + 1 })}}>Next Page</button>
-
-            </div>
-
-
-            <div className="display-count">
-
+            </section>
+{/* Cakes per page button Section */}
+            <section className="btn-right">
               <h5 className="text-wrap">Select display: Cakes per page</h5>
-
               <button disabled={ this.state.display === 1 } onClick={ () => { this.changeDisplay(1) } }>1</button>
               <button disabled={ this.state.display === 3 } onClick={ () => { this.changeDisplay(3) } }>3</button>
               <button disabled={ this.state.display === 5 } onClick={ () => { this.changeDisplay(5) } }>5</button>
-
-
               <button disabled={ this.state.display === this.props.cakes.length } onClick={ () => { this.changeDisplay( this.props.cakes.length ) } }>All</button>
-              
-            </div>
-        
-          </div>
-
-
-{/* may need to remove */}
+            </section>       
+          </section>
         </div>
-
-
       </div>
     )
   }
