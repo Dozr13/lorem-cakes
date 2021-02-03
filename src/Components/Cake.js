@@ -29,10 +29,11 @@ let mappedButtons = props.buttons.map(( b, i ) => <button className={ b.class } 
         <img src={`${process.env.PUBLIC_URL}${props.cake.imgUrl}`} alt="cake" />
         <h2>{ props.cake.name }</h2>
         <h3>{ props.cake.flavor }</h3>
-        <h4><NumberFormat value={ price } displayType={ 'text' } thousandSeparator={true} prefix={ '$' } isNumericString={ true } decimalScale={ 2 } fixedDecimalScale={ true } /></h4>
-        
-        { mappedButtons }
-        
+        <h4 className="checkout-margin" ><NumberFormat value={ price } displayType={ 'text' } thousandSeparator={true} prefix={ `${ props.cake.quantity }- ${ props.cake.name }:  $` } isNumericString={ true } decimalScale={ 2 } fixedDecimalScale={ true } /></h4>
+        <section className="inline-btns">
+          { mappedButtons }
+        </section>
+
       </div>
     )
   }

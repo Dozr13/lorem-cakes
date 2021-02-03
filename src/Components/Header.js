@@ -5,9 +5,11 @@ export default function Header() {
   return (
     <header className="header">
       <section className="left-header">
-        <img className="logo"
-        src={process.env.PUBLIC_URL + '/imgs/loremCakeLogo.png'}
-        alt="mock logo of a cake" />
+        <bg className="logo-bg">
+          <img className="logo"
+          src={process.env.PUBLIC_URL + '/imgs/loremCakeLogo.png'}
+          alt="mock logo of a cake" />
+        </bg>
       </section>
       
       <span className="mid-header">

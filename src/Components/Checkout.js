@@ -15,9 +15,9 @@ export default function Checkout(props){
   //! added 3 buttons to adjust quantity of item in cart and also on eot remove item from cart
 
     let chosenCakes = props.cart.map((cakes, i) => <div key={ i }>
-      <span class="cart-quantity">
+      {/* <section class="cart-quantity">
       { cakes.quantity }
-      </span>
+      </section> */}
 
       <Cake class="cart-cake" cake={ cakes } buttons={ [
       { class:"cart-btns", name: '-', cb: () => props.updateCart( cakes.id, cakes.quantity - 1 ), disable: cakes.quantity <= 1 }, 
