@@ -36,7 +36,7 @@ export default class DisplayCakes extends Component {
   // ! maps displayedCakes to display each individual cakes in the array
 
     let mappedCakes = () => displayedCakes.map(( c, i ) => <Cake class="cake" cake={ c } key={ i } addToCart={ this.props.addToCart } buttons={ [
-      { class:"add-btn-style", name: 'Add To Cart', cb: () => this.props.addToCart( c ), disable: false }
+      { class:"add-btn-style", name: `Add To Cart`, cb: () => this.props.addToCart( c ), disable: false }
     ] } 
     />
     ) 
@@ -62,10 +62,14 @@ export default class DisplayCakes extends Component {
 {/* Cakes per page button Section */}
             <section className="btn-right">
               <h5 className="text-wrap">Select display: Cakes per page</h5>
-              <button disabled={ this.state.display === 1 } onClick={ () => { this.changeDisplay(1) } }>1</button>
-              <button disabled={ this.state.display === 3 } onClick={ () => { this.changeDisplay(3) } }>3</button>
-              <button disabled={ this.state.display === 5 } onClick={ () => { this.changeDisplay(5) } }>5</button>
-              <button disabled={ this.state.display === this.props.cakes.length } onClick={ () => { this.changeDisplay( this.props.cakes.length ) } }>All</button>
+              <button disabled={ this.state.display === 1 } 
+              onClick={ () => { this.changeDisplay(1) } }>1</button>
+              <button disabled={ this.state.display === 3 } 
+              onClick={ () => { this.changeDisplay(3) } }>3</button>
+              <button disabled={ this.state.display === 5 } 
+              onClick={ () => { this.changeDisplay(5) } }>5</button>
+              <button disabled={ this.state.display === this.props.cakes.length } 
+              onClick={ () => { this.changeDisplay( this.props.cakes.length ) } }>All</button>
             </section>       
           </section>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+// import img from '../assets/border-img/cake-frosting.png'
 
 export default function Header() {
 
@@ -19,6 +20,11 @@ export default function Header() {
       <span className="right-header">
       <h2 className="motto"><a href="/#">Eat more cake!</a></h2>
       </span>
+
+      {/* <img className="border-bottom"
+      src={ img }
+      alt="frosting"
+      /> */}
 
     </header>
 
