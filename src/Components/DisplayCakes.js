@@ -55,8 +55,10 @@ export default class DisplayCakes extends Component {
 {/* Previous / Next button Section */}
             <section className="btn-left">
               <h5 className="text-wrap">Check out more cakes!</h5>
-              <button disabled={ this.state.currentPage === 1 } onClick={ () => { this.setState({ currentPage: this.state.currentPage - 1 })}}>Previous Page</button>
-              <button disabled={ this.state.currentPage === Math.ceil( this.props.cakes.length / this.state.display ) } onClick={ () => { this.setState({ currentPage: this.state.currentPage + 1 })}}>Next Page</button>
+              <button disabled={ this.state.currentPage === 1 } 
+              onClick={ () => { this.setState({ currentPage: this.state.currentPage - 1 })}}>Previous Page</button>
+              <button disabled={ this.state.currentPage === Math.ceil( this.props.cakes.length / this.state.display ) } 
+              onClick={ () => { this.setState({ currentPage: this.state.currentPage + 1 })}}>Next Page</button>
             </section>
             
 {/* Cakes per page button Section */}

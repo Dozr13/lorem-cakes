@@ -127,8 +127,13 @@ export default class App extends Component {
         <Header />
 {/* Separates main sections */}
         <div className="side-by-side">
-          <DisplayCakes cakes={ this.state.cakes } addToCart={ this.addToCart } />
-          <Checkout cart={ this.state.cart } empty={ this.clearCart } order={ this.order } updateCart={ this.updateCart } delete={ this.delete } />
+          <DisplayCakes cakes={ this.state.cakes } 
+          addToCart={ this.addToCart } />
+          <Checkout cart={ this.state.cart } 
+          empty={ this.clearCart } 
+          order={ this.order } 
+          updateCart={ this.updateCart } 
+          delete={ this.delete } />
         </div>
 
       </div>

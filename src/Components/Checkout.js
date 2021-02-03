@@ -45,10 +45,20 @@ return (
         </section>
 {/* Total purchase Information for total */}
           <span id="total">
-          { chosenCakes.length === 0 ? null : <NumberFormat value={ sum } displayType={ 'text' } thousandSeparator={true} prefix={ 'Total: $' } isNumericString={ true } decimalScale={ 2 } fixedDecimalScale={ true } /> }
+          { chosenCakes.length === 0 
+          ? null 
+          : <NumberFormat 
+          value={ sum } 
+          displayType={ 'text' } 
+          thousandSeparator={true} 
+          prefix={ 'Total: $' } 
+          isNumericString={ true } 
+          decimalScale={ 2 } 
+          fixedDecimalScale={ true } /> }
           </span>
 {/* Checkout Button */}
-          { props.cart.length > 0 && <button className="checkout-btn" onClick={ props.order }>Checkout</button> }
+          { props.cart.length > 0 && <button className="checkout-btn" 
+          onClick={ props.order }>Checkout</button> }
 
       </div>
 
