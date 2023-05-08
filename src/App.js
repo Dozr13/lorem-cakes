@@ -30,7 +30,6 @@ export default class App extends Component {
   }
 
   addToCart = (cake) => {
-    console.log("add");
     axios
       .post(`/api/cakes`, { cake })
       .then((res) => {
