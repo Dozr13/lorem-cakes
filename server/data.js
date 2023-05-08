@@ -1,6 +1,3 @@
-// const img1 = require('../src/imgs/dark-delicate-cake.jpg')
-
-
 const cakes = [
   {
     id: 1,
@@ -8,9 +5,9 @@ const cakes = [
     flavor: `Chocolate`,
     color: `neapolitan`,
     allergyInfo: `nope`,
-    price: 300.00,
+    price: 300.0,
     imgUrl: `/imgs/dark-delicate-cake.jpg`,
-    quantity: 1
+    quantity: 1,
   },
   {
     id: 2,
@@ -19,8 +16,8 @@ const cakes = [
     color: `Pink`,
     allergyInfo: `Nahh`,
     price: 50.99,
-    imgUrl: '/imgs/animal-cookies.jpg',
-    quantity: 1
+    imgUrl: "/imgs/animal-cookies.jpg",
+    quantity: 1,
   },
   {
     id: 3,
@@ -29,8 +26,8 @@ const cakes = [
     color: `Brown/ Red`,
     allergyInfo: `All sorts`,
     price: 85.78,
-    imgUrl: '/imgs/choc-val-cake.jpg',
-    quantity: 1
+    imgUrl: "/imgs/choc-val-cake.jpg",
+    quantity: 1,
   },
   {
     id: 4,
@@ -39,8 +36,8 @@ const cakes = [
     color: `White/ Black`,
     allergyInfo: `Hope not!`,
     price: 130.57,
-    imgUrl: '/imgs/heart-cake.jpg',
-    quantity: 1
+    imgUrl: "/imgs/heart-cake.jpg",
+    quantity: 1,
   },
   {
     id: 5,
@@ -49,8 +46,8 @@ const cakes = [
     color: `Dark`,
     allergyInfo: `Cherries`,
     price: 35.99,
-    imgUrl: '/imgs/heart-cookies.jpg',
-    quantity: 1
+    imgUrl: "/imgs/heart-cookies.jpg",
+    quantity: 1,
   },
   {
     id: 6,
@@ -59,8 +56,8 @@ const cakes = [
     color: `All kinds`,
     allergyInfo: `Depends`,
     price: 45.98,
-    imgUrl: '/imgs/mug-o-truffles.jpg',
-    quantity: 1
+    imgUrl: "/imgs/mug-o-truffles.jpg",
+    quantity: 1,
   },
   {
     id: 7,
@@ -69,8 +66,8 @@ const cakes = [
     color: `Fun`,
     allergyInfo: `Chocolate, sorry`,
     price: 375.21,
-    imgUrl: '/imgs/owl-cake.jpg',
-    quantity: 1
+    imgUrl: "/imgs/owl-cake.jpg",
+    quantity: 1,
   },
   {
     id: 8,
@@ -79,8 +76,8 @@ const cakes = [
     color: `White`,
     allergyInfo: `Coconut`,
     price: 45.97,
-    imgUrl: '/imgs/truffles.jpg',
-    quantity: 1
+    imgUrl: "/imgs/truffles.jpg",
+    quantity: 1,
   },
   {
     id: 9,
@@ -88,15 +85,12 @@ const cakes = [
     flavor: `Strawberry`,
     color: `Pink/ Red`,
     allergyInfo: `nada unless strawberries`,
-    price: 185.50,
-    imgUrl: '/imgs/wreath-cake.jpg',
-    quantity: 1
-  }
-]
-
-// const images = [img1]
+    price: 185.5,
+    imgUrl: "/imgs/wreath-cake.jpg",
+    quantity: 1,
+  },
+];
 
 module.exports = {
-  cakes
-  // images
-}
+  cakes,
+};
